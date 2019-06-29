@@ -16,7 +16,9 @@ spec:
     spec:
       containers:
       - name: post-service
-        image: post-service
+        image: shakka/post-service
+        # uncomment this line to reference local build of image
+        # image: post-service
         imagePullPolicy: IfNotPresent
         env:
           - name: PORT

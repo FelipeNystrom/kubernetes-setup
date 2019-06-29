@@ -20,7 +20,9 @@ spec:
     spec:
      containers:
      - name: upload-service
-       image: upload-service
+       image: shakka/upload-service
+       # uncomment this line to reference local build of image
+       #  image: upload-service
        imagePullPolicy: IfNotPresent
        env:
          - name: PORT
