@@ -11,6 +11,12 @@ This is the parent repo for a small microservice project. It consists of four sm
 
 **_Notice that this is a test setup only tested in minikube_**
 
+_If you want to skip to upload and pull form docker hub everytime you change your docker base images, open a shell inside minikube environment to build local docker images. To open a shell in minikube environment use command:_
+
+```
+eval $(minikube docker-env)
+```
+
 The whole system consists of a postgres db service, for interservice communication a kafka messagebus service together with zookeeper for orchestration of future kafka instances is in place.
 
 The kafka setup is for learning purpose and is as of now not production ready. The goal however is to take this whole system and make it ready for production. A nginx reverse proxy sits in front of everything and pushes incoming requests to the api gateway.

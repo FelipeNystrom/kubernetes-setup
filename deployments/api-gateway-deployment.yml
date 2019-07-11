@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
       - name: api-gateway
-        image: shakka/kubernetes-api-gateway
+        # image: shakka/kubernetes-api-gateway
         # uncomment this line to reference local build of image 
-        # image: kubernetes-gateway
+        image: kubernetes-gateway
         imagePullPolicy: IfNotPresent
         env:
           - name: PORT

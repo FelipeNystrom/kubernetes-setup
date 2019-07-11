@@ -18,27 +18,27 @@ spec:
         serviceRoute: upload
         serviceName: upload-service
     spec:
-     containers:
-     - name: upload-service
-       image: shakka/upload-service
-       # uncomment this line to reference local build of image
-       #  image: upload-service
-       imagePullPolicy: IfNotPresent
-       env:
-         - name: PORT
-           value: '3000'
-       # Override start command for enabling of debugging
-       command: ['node']
-       args: ['--inspect', 'server.js']
-       resources:
-         requests:
-           memory: "500Mi"
-           cpu: "100m"
-         limits:
-           memory: "500Mi"
-           cpu: "300m"
-       ports:
-         - name: upload-port 
-           containerPort: 3000
+      containers:
+      - name: upload-service
+        # image: shakka/upload-service
+        # uncomment this line to reference local build of image
+        image: upload-service
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: PORT
+            value: '3000'
+        # Override start command for enabling of debugging
+        command: ['node']
+        args: ['--inspect', 'server.js']
+        resources:
+          requests:
+            memory: "500Mi"
+            cpu: "100m"
+          limits:
+            memory: "500Mi"
+            cpu: "300m"
+        ports:
+          - name: upload-port 
+            containerPort: 3000
 
  
